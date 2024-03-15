@@ -45,28 +45,20 @@ const bodyCareData = [
 ];
 
 // append to this div
-
-// append to this div
 let bodyCareContainer = document.getElementById("bodyCareContainer");
 
-// Iterate over the bodyCareData array and update the UI
 bodyCareData.forEach((item) => {
-  // Create a div element for each body care item
   let bodyCareItem = document.createElement("div");
-  bodyCareItem.classList.add("body-care-item"); // Add a CSS class for styling
+  bodyCareItem.classList.add("body-care-item");
 
-  // Create an img element for the body care item image
   let img = document.createElement("img");
   img.src = item.img;
   img.alt = item.name;
-  bodyCareItem.appendChild(img); // Append the image to the body care item
+  bodyCareItem.appendChild(img);
 
-  // Create a p element for the body care item name
   let nameParagraph = document.createElement("p");
   nameParagraph.textContent = item.name;
-  bodyCareItem.appendChild(nameParagraph); // Append the name paragraph to the body care item
-
-  // Create a p element for the original price
+  bodyCareItem.appendChild(nameParagraph);
   let originalPriceParagraph = document.createElement("p");
   originalPriceParagraph.textContent = "Original Price: $" + item.originalPrice;
   bodyCareItem.appendChild(originalPriceParagraph); // Append the original price paragraph to the body care item
@@ -75,30 +67,23 @@ bodyCareData.forEach((item) => {
   let discountedPriceParagraph = document.createElement("p");
   discountedPriceParagraph.textContent =
     "Discounted Price: $" + item.discountedPrice;
-  bodyCareItem.appendChild(discountedPriceParagraph); // Append the discounted price paragraph to the body care item
+  bodyCareItem.appendChild(discountedPriceParagraph);
 
-  // Create a button for adding to cart
   let addToCartButton = document.createElement("button");
   addToCartButton.textContent = "Add to Cart";
-  addToCartButton.dataset.name = item.name; // Set the dataset for the name
-  addToCartButton.dataset.price = item.discountedPrice; // Set the dataset for the price
-  addToCartButton.classList.add("add-to-cart-btn"); // Add a CSS class for styling
+  addToCartButton.dataset.name = item.name;
+  addToCartButton.dataset.price = item.discountedPrice;
+  addToCartButton.classList.add("add-to-cart-btn");
   addToCartButton.addEventListener("click", () => addToCart(item)); // Add click event listener to add item to cart
-  bodyCareItem.appendChild(addToCartButton); // Append the button to the body care item
+  bodyCareItem.appendChild(addToCartButton);
 
-  // Append the body care item to the bodyCareContainer
   bodyCareContainer.appendChild(bodyCareItem);
 });
 
-// Function to add item to cart
 function addToCart(item) {
-  // Retrieve cart items from localStorage
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  // Push the item to the cart array
   cart.push(item);
-  // Update localStorage with the updated cart array
   localStorage.setItem("cart", JSON.stringify(cart));
-  // Update cart count in the navbar
   updateCartCount(cart.length);
 }
 

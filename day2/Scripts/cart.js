@@ -1,6 +1,3 @@
-// add cart data to this div
-// let cartContainer = document.getElementById("cartContainer");
-
 // Function to display cart items
 function displayCartItems() {
   let cartContainer = document.getElementById("cartContainer");
@@ -10,7 +7,6 @@ function displayCartItems() {
 
   // Iterate over cart items and create HTML elements for each item
   cartItems.forEach((item) => {
-    // Create a div element for each cart item
     let cartItemDiv = document.createElement("div");
     cartItemDiv.classList.add("cart-item");
 
