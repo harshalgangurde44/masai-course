@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>face Care</title>
+    <link rel="stylesheet" href="./Styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #faceCareContainer {
+        display: flex;
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: center; /* Center items horizontally */
+      }
+
+      .face-care-item {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        padding: 20px;
+        width: 300px;
+        display: flex; /* Change to flexbox layout */
+        flex-direction: column; /* Stack children vertically */
+      }
+
+      .face-care-item img {
+        border-radius: 10px;
+        display: block;
+        margin-bottom: 15px;
+        max-width: 100%;
+        align-self: center; /* Center image horizontally */
+      }
+
+      .face-care-item p {
+        color: #333333;
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+
+      /* Move button to the bottom */
+      .add-to-cart-btn {
+        background-color: #0bad98;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 14px;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+        align-self: flex-end; /* Align button to the bottom */
+        margin-top: auto; /* Add spacing between button and other elements */
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #0a907d;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <a href="index.html" id="home">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1454/5188/files/logo_602b86cb-64f1-48bb-91ff-10ea44c29c10.png?v=1679991855&width=500"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="bodyCare.html" id="bodyCare"> Body Care </a>
+        <a href="faceCare.html" id="faceCare" style="color: #0bad98">
+          Face Care
+        </a>
+        <a href="hairCare.html" id="hairCare"> Hair Care </a>
+      </div>
+
+      <div>
+        <a href="login.html" id="login"> login </a>
+        <a href="signUp.html" id="signUp"> signUp </a>
+        <a href="cart.html" id="cart">
+          🛍️
+          <div id="cartCount">0</div>
+        </a>
+      </div>
+    </nav>
+    <div id="faceCareContainer">
+      <!-- append faceCare data to this div -->
+    </div>
+  </body>
+  <script src="./Scripts/faceCare.js"></script>
+</html>

@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up</title>
+    <link rel="stylesheet" href="./Styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <a href="index.html" id="home">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1454/5188/files/logo_602b86cb-64f1-48bb-91ff-10ea44c29c10.png?v=1679991855&width=500"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="bodyCare.html" id="bodyCare"> Body Care </a>
+        <a href="faceCare.html" id="faceCare"> Face Care </a>
+        <a href="hairCare.html" id="hairCare"> Hair Care </a>
+      </div>
+
+      <div>
+        <a href="login.html" id="login"> login </a>
+        <a href="signUp.html" id="signUp" style="color: #0bad98"> signUp </a>
+      </div>
+    </nav>
+
+    <div id="signUpContainer">
+      <h1>SignUp Form</h1>
+      <!-- add SignUp form here with input for fullname, email, phone and password -->
+      <form id="signUpForm">
+        <label for="fullname">Full Name:</label><br />
+        <input type="text" id="fullname" name="fullname" /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br />
+
+        <label for="phone">Phone:</label><br />
+        <input type="tel" id="phone" name="phone" /><br />
+
+        <label for="password">Password:</label><br />
+        <input type="password" id="password" name="password" /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+      <a href="login.html">Already Registered? Login</a>
+    </div>
+  </body>
+  <script src="./Scripts/signUp.js"></script>
+</html>

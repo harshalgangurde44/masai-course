@@ -1,0 +1,95 @@
+/* navbar CSS */
+* {
+  font-family: "PT Sans", sans-serif;
+}
+
+nav > div > h1,
+nav > div > h3 {
+  margin-left: 20px;
+}
+nav {
+  height: 60px;
+  width: 100%;
+  font-size: larger;
+  margin-top: 0;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+nav > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 30px;
+  font-size: 25px;
+}
+
+nav > div > div {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*  */
+#signUpContainer {
+  max-width: 400px;
+  height: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#signUpContainer h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#signUpForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#signUpForm label {
+  margin-bottom: 5px;
+}
+
+#signUpForm input[type="text"],
+#signUpForm input[type="email"],
+#signUpForm input[type="tel"],
+#signUpForm input[type="password"],
+#signUpForm input[type="submit"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+#signUpForm input[type="submit"] {
+  background-color: #0bad98;
+  color: #fff;
+  cursor: pointer;
+}
+
+#signUpForm input[type="submit"]:hover {
+  background-color: #0a907a;
+}
+
+#signUpContainer a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #0bad98;
+  text-decoration: none;
+}
+
+#signUpContainer a:hover {
+  text-decoration: underline;
+}

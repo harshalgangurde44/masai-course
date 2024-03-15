@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>m caffeine</title>
+    <link rel="stylesheet" href="./Styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* index.css */
+
+      /* Navigation styles */
+      nav {
+        background-color: #fff; /* Set background color */
+        padding: 10px; /* Add some padding */
+        position: fixed; /* Fix the navigation bar at the top */
+        top: 0; /* Position it at the top of the viewport */
+        width: 100%; /* Make it full width */
+        z-index: 1000; /* Set a high z-index to ensure it's above other content */
+      }
+
+      nav div {
+        display: flex; /* Align items horizontally */
+        justify-content: space-between; /* Space items evenly */
+        align-items: center; /* Center items vertically */
+      }
+
+      nav a {
+        text-decoration: none; /* Remove underline from links */
+        color: #000; /* Set link color */
+        margin: 0 10px; /* Add margin to separate links */
+      }
+
+      /* Cart count styles */
+      #cartCount {
+        background-color: #ff0000; /* Set background color */
+        color: #fff; /* Set text color */
+        border-radius: 50%; /* Make it a circle */
+        padding: 5px 8px; /* Add padding */
+        font-size: 12px; /* Set font size */
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div>
+        <a href="index.html" id="home">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1454/5188/files/logo_602b86cb-64f1-48bb-91ff-10ea44c29c10.png?v=1679991855&width=500"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="bodyCare.html" id="bodyCare"> Body Care </a>
+        <a href="faceCare.html" id="faceCare"> Face Care </a>
+        <a href="hairCare.html" id="hairCare"> Hair Care </a>
+      </div>
+
+      <div>
+        <a href="login.html" id="login"> login </a>
+        <a href="signUp.html" id="signUp"> signUp </a>
+        <a href="cart.html" id="cart">
+          <div>🛍️</div>
+          <div id="cartCount">0</div>
+        </a>
+      </div>
+    </nav>
+
+    <div id="imgContainer">
+      <!-- Add image here with alt=heroImg -->
+      <img
+        src="https://cdn.shopify.com/s/files/1/1454/5188/files/Desktop_23_c81b511b-62ec-4fe0-b310-923d27deddd2.jpg?v=1687156859"
+        alt="heroImg"
+      />
+    </div>
+  </body>
+  <script src="./Scripts/index.js"></script>
+</html>

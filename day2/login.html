@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./Styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Styles for the login page */
+
+      /* Login container */
+      #loginContainer {
+        margin-top: 80px;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* Login form */
+      #loginForm {
+        margin-top: 20px;
+      }
+
+      #loginForm label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      #loginForm input[type="email"],
+      #loginForm input[type="password"],
+      #loginForm input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      #loginForm input[type="submit"] {
+        background-color: #0bad98;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #loginForm input[type="submit"]:hover {
+        background-color: #0a907d;
+      }
+
+      /* New User link */
+      #loginContainer a {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #0bad98;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="index.html" id="home">
+          <img
+            src="https://cdn.shopify.com/s/files/1/1454/5188/files/logo_602b86cb-64f1-48bb-91ff-10ea44c29c10.png?v=1679991855&width=500"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="bodyCare.html" id="bodyCare"> Body Care </a>
+        <a href="faceCare.html" id="faceCare"> Face Care </a>
+        <a href="hairCare.html" id="hairCare"> Hair Care </a>
+      </div>
+
+      <div>
+        <a href="login.html" id="login" style="color: #0bad98"> login </a>
+        <a href="signUp.html" id="signUp"> signUp </a>
+      </div>
+    </nav>
+
+    <div id="loginContainer">
+      <h1>Login Form</h1>
+      <!-- add form with input for email and password -->
+      <form id="loginForm">
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br />
+
+        <label for="password">Password:</label><br />
+        <input type="password" id="password" name="password" /><br />
+
+        <input type="submit" value="Login" />
+      </form>
+      <a href="signUp.html">New User? Sign Up</a>
+    </div>
+  </body>
+  <script src="./Scripts/Login.js"></script>
+</html>
