@@ -1,0 +1,57 @@
+db.sales.aggregate([
+  {
+    $match: {
+      date: {
+        $gte: {
+          $subtract: [ "$$NOW", { $multiply: [ 30, 24, 60, 60, 1000 ] } ]
+        }
+      }
+    }
+  },
+  {
+    $group: {
+      _id: "$item",
+      totalQuantity: { $sum: "$quantity" },
+      totalPrice: { $sum: { $multiply: ["$quantity", "$price"] } }
+    }
+  },
+  {
+    $project: {
+      itemName: "$_id",
+      totalQuantity: 1,
+      totalPrice: 1,
+      averagePrice: { $divide: ["$totalPrice", "$totalQuantity"] }
+    }
+  },
+  {
+    $sort: { totalQuantity: -1 }
+  },
+  {
+    $limit: 10
+  }
+])
+
+
+OUTPUT ------>
+
+[
+  {
+    "itemName": "Product A",
+    "totalQuantity": 150,
+    "totalPrice": 750,
+    "averagePrice": 5
+  },
+  {
+    "itemName": "Product B",
+    "totalQuantity": 120,
+    "totalPrice": 1440,
+    "averagePrice": 12
+  },
+  {
+    "itemName": "Product C",
+    "totalQuantity": 100,
+    "totalPrice": 2000,
+    "averagePrice": 20
+  },
+  // Other items follow...
+]
