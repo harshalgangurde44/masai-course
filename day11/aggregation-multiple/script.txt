@@ -1,0 +1,169 @@
+
+use your_database;
+
+// Create collections
+db.createCollection("personal_info");
+db.createCollection("zip_code_info");
+db.createCollection("city_state_info");
+db.createCollection("state_country_info");
+
+
+// Insert documents into personal_info collection
+db.personal_info.insertMany([
+    { _id: 1, name: "John", age: 25, address: "123 Main St" },
+    { _id: 2, name: "Jane", age: 35, address: "456 Main St" },
+    { _id: 3, name: "Bob", age: 45, address: "789 Main St" },
+    { _id: 4, name: "Alice", age: 55, address: "246 Main St" }
+]);
+
+// Insert documents into zip_code_info collection
+db.zip_code_info.insertMany([
+    { _id: 1, address: "123 Main St", zipcode: "12345" },
+    { _id: 2, address: "456 Main St", zipcode: "54321" },
+    { _id: 3, address: "789 Main St", zipcode: "98765" },
+    { _id: 4, address: "246 Main St", zipcode: "24680" }
+]);
+
+// Insert documents into city_state_info collection
+db.city_state_info.insertMany([
+    { _id: 1, zipcode: "12345", city: "New York", state: "NY" },
+    { _id: 2, zipcode: "54321", city: "Chicago", state: "IL" },
+    { _id: 3, zipcode: "98765", city: "Los Angeles", state: "CA" },
+    { _id: 4, zipcode: "24680", city: "Miami", state: "FL" }
+]);
+
+// Insert documents into state_country_info collection
+db.state_country_info.insertMany([
+    { _id: 1, state: "NY", country: "USA" },
+    { _id: 2, state: "IL", country: "USA" },
+    { _id: 3, state: "CA", country: "USA" },
+    { _id: 4, state: "FL", country: "USA" },
+    { _id: 5, state: "MH", country: "India" },
+    { _id: 6, state: "DL", country: "India" }
+]);
+
+// Step 3: Use $lookup to perform joins
+
+// Join personal_info with zip_code_info
+db.personal_info.aggregate([
+    {
+        $lookup: {
+            from: "zip_code_info",
+            localField: "address",
+            foreignField: "address",
+            as: "zip_info"
+        }
+    }
+]);
+
+// Join the result with city_state_info
+db.personal_info.aggregate([
+    {
+        $lookup: {
+            from: "zip_code_info",
+            localField: "address",
+            foreignField: "address",
+            as: "zip_info"
+        }
+    },
+    {
+        $lookup: {
+            from: "city_state_info",
+            localField: "zip_info.zipcode",
+            foreignField: "zipcode",
+            as: "city_state_info"
+        }
+    }
+]);
+
+// Join the result with state_country_info
+db.personal_info.aggregate([
+    {
+        $lookup: {
+            from: "zip_code_info",
+            localField: "address",
+            foreignField: "address",
+            as: "zip_info"
+        }
+    },
+    {
+        $lookup: {
+            from: "city_state_info",
+            localField: "zip_info.zipcode",
+            foreignField: "zipcode",
+            as: "city_state_info"
+        }
+    },
+    {
+        $lookup: {
+            from: "state_country_info",
+            localField: "city_state_info.state",
+            foreignField: "state",
+            as: "state_country_info"
+        }
+    }
+]);
+
+
+
+OUTPUT ----->
+
+[
+  {
+    "_id": 1,
+    "name": "John",
+    "age": 25,
+    "address": "123 Main St",
+    "zip_info": [
+      {
+        "_id": 1,
+        "address": "123 Main St",
+        "zipcode": "12345"
+      }
+    ],
+    "city_state_info": [
+      {
+        "_id": 1,
+        "zipcode": "12345",
+        "city": "New York",
+        "state": "NY"
+      }
+    ],
+    "state_country_info": [
+      {
+        "_id": 1,
+        "state": "NY",
+        "country": "USA"
+      }
+    ]
+  },
+  {
+    "_id": 2,
+    "name": "Jane",
+    "age": 35,
+    "address": "456 Main St",
+    "zip_info": [
+      {
+        "_id": 2,
+        "address": "456 Main St",
+        "zipcode": "54321"
+      }
+    ],
+    "city_state_info": [
+      {
+        "_id": 2,
+        "zipcode": "54321",
+        "city": "Chicago",
+        "state": "IL"
+      }
+    ],
+    "state_country_info": [
+      {
+        "_id": 2,
+        "state": "IL",
+        "country": "USA"
+      }
+    ]
+  },
+  // More documents for Bob, Alice, etc.
+]
