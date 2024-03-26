@@ -7,7 +7,7 @@
   },
   "description": "",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test": "jest"
   },
