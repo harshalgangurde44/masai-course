@@ -37,13 +37,13 @@ export const ProblemCard: React.FC<ProblemCardProps> = ({
 
   return (
     <div>
-      <p className="problem-statement">Problem: {problem.problem}</p>
+      <p className="problem-statement">{problem.problem}</p>
       <p className="option-a">A: {problem.optionA}</p>
       <p className="option-b">B: {problem.optionB}</p>
       <p className="option-c">C: {problem.optionC}</p>
       <p className="option-d">D: {problem.optionD}</p>
       <p className="correct-option">Correct Option: {problem.correctOption}</p>
-      <p className="marks">weightage:{problem.weightage}</p>
+      <p className="marks">Marks:{problem.weightage}</p>
       <button data-testid="increase-weightage" onClick={increaseWeightage}>
         +
       </button>

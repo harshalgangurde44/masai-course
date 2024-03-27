@@ -57,6 +57,12 @@ export const AddQuiz: React.FC = () => {
         value={correctOption}
         onChange={(e) => setCorrectOption(e.target.value)}
       >
+        <input
+          className="weightage"
+          type="number"
+          value={weightage}
+          onChange={(e) => setWeightage(Number(e.target.value))}
+        />
         <option value="">Select Correct Option</option>
         <option value="a">A</option>
         <option value="b">B</option>
