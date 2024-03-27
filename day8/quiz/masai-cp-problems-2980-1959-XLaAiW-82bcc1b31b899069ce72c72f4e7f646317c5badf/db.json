@@ -1,16 +1,6 @@
 {
   "quizes": [
     {
-      "problem": "What is React?",
-      "a": "1",
-      "b": "Library",
-      "c": "Package",
-      "d": "None",
-      "correct": "b",
-      "weightage": 4,
-      "id": 1
-    },
-    {
       "problem": "myque",
       "optionA": "1",
       "optionB": "2",
@@ -29,6 +19,16 @@
       "correctOption": "c",
       "weightage": 0,
       "id": 3
+    },
+    {
+      "problem": "react ",
+      "optionA": "ok",
+      "optionB": "good ",
+      "optionC": "nice",
+      "optionD": "fine",
+      "correctOption": "b",
+      "weightage": 0,
+      "id": 4
     }
   ]
 }
