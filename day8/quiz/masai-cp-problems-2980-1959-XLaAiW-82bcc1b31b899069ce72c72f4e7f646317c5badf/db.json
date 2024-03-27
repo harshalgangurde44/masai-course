@@ -1,0 +1,34 @@
+{
+  "quizes": [
+    {
+      "problem": "What is React?",
+      "a": "1",
+      "b": "Library",
+      "c": "Package",
+      "d": "None",
+      "correct": "b",
+      "weightage": 4,
+      "id": 1
+    },
+    {
+      "problem": "myque",
+      "optionA": "1",
+      "optionB": "2",
+      "optionC": "3",
+      "optionD": "4",
+      "correctOption": "c",
+      "weightage": 2,
+      "id": 2
+    },
+    {
+      "problem": "whats js",
+      "optionA": "java",
+      "optionB": "javas",
+      "optionC": "javascript",
+      "optionD": "none",
+      "correctOption": "c",
+      "weightage": 0,
+      "id": 3
+    }
+  ]
+}
